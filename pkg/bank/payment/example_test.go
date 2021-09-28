@@ -5,31 +5,25 @@ import (
 	"fmt"
 )
 
-func ExamplePaymentSources()  {
-	
-	cards:= []types.Card {
+func ExampleMax() {
+
+	payments:= [] types.Payment{
 		{
-			PAN: "1233 3123 4344 3443",
-			Balance: 300,
-			Name: "Visa",
-			Active: true,
+			ID: 1,
+			Amount: 10,
 		},
 		{
-			PAN: "1231 3244 6756 5675",
-			Balance: 400,
-			Name: "Master",
-			Active: true,
+			ID: 2,
+			Amount: 20,
+		},
+		{
+			ID: 3,
+			Amount: 30,
 		},
 	}
 
-	paymentSources:=PaymentSources(cards)
-
-	for i := 0; i < len(paymentSources); i++ {
-		fmt.Println(paymentSources[i].Number)
-	}
-
-	
+	max:= Max (payments)
+	fmt.Println(max.ID)
 	//Output:
-	//1233 3123 4344 3443
-	//1231 3244 6756 5675
+	//3
 }

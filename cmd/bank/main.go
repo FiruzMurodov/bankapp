@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bank/pkg/bank/payment"
+	"bank/pkg/bank/card"
 	"bank/pkg/bank/types"
 	"fmt"
 )
@@ -27,7 +27,7 @@ func main() {
 			Active:  true,
 		},
 	}
-	paymentSources := payment.PaymentSources(cards)
+	paymentSources := card.PaymentSources(cards)
 
 	for i := 0; i < len(paymentSources); i++ {
 		fmt.Println(paymentSources[i].Number)
